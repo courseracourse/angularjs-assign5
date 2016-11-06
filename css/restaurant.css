@@ -200,3 +200,7 @@ a[ui-sref="admin.auth"] {
   }
   /* End Header */
 }
+
+legend {
+  color: #fff;
+}

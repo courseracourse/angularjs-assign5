@@ -1,0 +1,71 @@
+<div  ng-controller="MenuMyInfoController as reg">
+
+  <div ng-if="reg.isRegistered">
+    <div class="container">
+      <h3>Registration info:</h3>
+      <div class="row">
+        <div class="col-md-3">
+          Firstname:
+        </div>
+        <div class="col-md-9">
+          {{ reg.user.firstname }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          Lastname:
+        </div>
+        <div class="col-md-9">
+          {{ reg.user.lastname }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          E-mail:
+        </div>
+        <div class="col-md-9">
+          {{ reg.user.email }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          Phone:
+        </div>
+        <div class="col-md-9">
+          {{ reg.user.phone }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          Favorite dish:
+        </div>
+        <div class="col-md-9">
+          <div>
+            {{ reg.user.menuitem.short_name }}
+          </div>
+          <div>
+            <div class="myinfo-menu-item-photo">
+              {{ reg.user.menuitem.name }} <img class="img-responsive" ng-src="{{ reg.user.menuitem.url }}" alt= "{{ reg.user.menuitem.name }}" >
+            </div>
+          </div>
+          <div>
+            {{ reg.user.menuitem.description }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div ng-if="!reg.isRegistered">
+    <div class = "container">
+      Not Signed Up Yet.
+      <div>
+        <a ui-sref="public.signup">Sign up Now!</a>
+      </div>
+    </div>
+  </div>
+</div>
